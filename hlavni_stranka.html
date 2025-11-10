@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss"></style>
+</head>
+
+<body class="m-0 bg-black w-screen h-screen text-white font-sans">
+
+    <div class="relative w-screen h-2.5 flex justify-end mr-[25px]"><img class="w-[75px] h-[75px]" src="slunce.png"
+            alt="slunce"></div>
+    <h1 class="mt-5 text-center text-5xl">Úvodní Stránka</h1>
+    <h4 class="mb-5 text-center text-2xl">Boris Krchňák</h4>
+
+    <div id="img_slider" class="relative w-screen h-[600px] overflow-hidden">
+        <img src="berk.jpg" alt="berk"
+            class="absolute top-0 left-0 w-full h-full opacity-100 transition-opacity duration-1000 ease-in-out object-cover slider_img_active">
+        <img src="pic.jpg" alt="pic"
+            class="absolute top-0 left-0 w-full h-full opacity-100 transition-opacity duration-1000 ease-in-out object-cover">
+    </div>
+
+    <!--Pár slov před zobrazením stránek-->
+    <div class="mt-30">
+        <p class="text-center text-5xl">Vítejte na mém webu</p>
+        <p class="text-center text-2xl"> Jsem student na VŠB-TUO a toto je můj projekt do předmětu ZIT :).</p>
+    </div>
+
+    <!--Něco málo o mě + proklik button na o mě stránku-->
+    <div class="mt-20 ml-50 flex justify-between items-center">
+        <p class="text-2xl">Něco málo o mě:</p>
+        <ul class="ml-15 list-disc">
+            <li>
+                <p>Je mi 19 let</p>
+            </li>
+            <li>
+                <p>Narodil jsem se v Nemocnici na fifejdách, ale celý život žiju v Porubě.</p>
+            </li>
+            <li>
+                <p>Vystudoval jsem střední školu s IT</p>
+            </li>
+            <li>
+                <p>Mám mnoho koníčku ale 100% her je můj nejoblíbenější</p>
+            </li>
+            <li>
+                <p>A více zjistíte zde -></p>
+            </li>
+        </ul>
+        <button id="osobni_profilBtn" class="relative bg-white shadow-lg shadow-white w-75 h-75 mr-50 rounded-lg overflow-hidden">
+            <img src="berk.jpg" class="absolute inset-0 rounded-lg blur-sm object-cover" alt="berk">
+            <p class="text-2xl relative w-full h-full flex items-center justify-center to-black">Osobní profil</p>
+        </button>
+    </div>
+
+    <!--Projekty-->
+    <div class="mt-20 ml-50 flex justify-between items-center">
+        <p class="text-2xl">Projekty na kterých jsem pracoval:</p>
+        <ul class="ml-15 list-disc">
+            <li>
+                <p>Tetris - Projekt do UPR v 1. Semestru</p>
+            </li>
+            <li>
+                <p>Tic-Tac-Toe - Vlastní projekt během střední školy</p>
+            </li>
+            <li>
+                <p>Webovky čistě pro sebe</p>
+            </li>
+            <li>
+                <p>Detaily zjistíte zde -></p>
+            </li>
+        </ul>
+        <button id="projektyBtn" class="relative bg-white shadow-lg shadow-white w-75 h-75 mr-50 rounded-lg overflow-hidden">
+            <img src="berk.jpg" class="absolute inset-0 rounded-lg blur-sm object-cover" alt="berk">
+            <p class="text-2xl relative w-full h-full flex items-center justify-center to-black">Projekty</p>
+        </button>
+    </div>
+
+    <div class="mt-50 m-20">
+        <hr>
+        <p class="text-center">Boris Krchňák</p>
+        <p class="text-center"><a href="https://github.com/TheInterlol">Github</a> | <a
+                href="https://www.linkedin.com/in/boris-krch%C5%88%C3%A1k-13782033b/">LinkedIn</a></p>
+        <p class="text-center">COPYRIGHT 2025</p>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
