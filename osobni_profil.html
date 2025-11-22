@@ -1,16 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="cs"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Osobní Profil</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss"></style>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        html { scrollbar-width: none; }
+    </style>
 </head>
 
-<body>
+<body class="bg-white text-black font-sans dark:bg-black dark:text-white transition-colors duration-300">
 
+    <a href="hlavni_stranka.html" class="absolute top-4 left-4 z-[60] opacity-80 hover:opacity-100 transition">
+        <img id="home-icon" src="home_dark.png" alt="Zpět" class="w-8 h-8"> 
+    </a>
+
+    <div class="relative w-full z-50 flex justify-end p-4">
+        <img id="sun" class="w-8 h-8 cursor-pointer transition-transform hover:rotate-45" src="moon.png" alt="přepínač">
+    </div>
+
+    <h1 class="text-center text-5xl mt-5">Osobní Profil</h1>
+    <h3 class="text-center text-2xl mb-10">Boris Krchňák</h3>
+
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+
+        <img src="ProfiFoto.png" class="w-full md:w-1/2 rounded-xl shadow-lg object-cover" alt="profil">
+
+        <div class="md:w-1/2 space-y-5">
+            <h2 class="text-3xl font-bold">O mně</h2>
+            <p class="text-lg">
+                Studoval jsem na Střední škole Teleinformatiky, kde jsem si osvojil programování, sítě, optiku a další IT základy. 
+            </p>
+            <h2 class="text-3xl font-bold mt-10">Zkušenosti</h2>
+            <ul class="list-disc ml-6 space-y-2">
+                <li>Programování: C#, Java, JS, React, C, Python</li>
+                <li>Projekty: Tetris, Tic-Tac-Toe, osobní webovky</li>
+                <li>
+                    <a href="StatementOfResult.pdf" class="border-b border-black dark:border-white hover:opacity-70 transition">Cambridge FCE – C1</a>
+                </li>
+                <li>
+                    <a href="CCNA.pdf" class="border-b border-black dark:border-white hover:opacity-70 transition">Cisco CCNA1</a> a 
+                    <a href="SwitchingARouting.pdf" class="border-b border-black dark:border-white hover:opacity-70 transition">Routing and Switching</a>
+                </li>
+            </ul>
+
+            <h2 class="text-3xl font-bold mt-10">Koníčky</h2>
+            <ul class="list-disc ml-6 space-y-2">
+                <li><a href="https://steamhunters.com/id/interlol17/games" target="_blank" class="border-b border-black dark:border-white hover:opacity-70 transition">100% her</a> - můj koníček již 5 let</li>
+                <li><a href="https://leetcode.com/u/boriskrchnak085/" target="_blank" class="border-b border-black dark:border-white hover:opacity-70 transition">Programování</a> vlastních projektů</li>
+                <li>Túry, čím dál tím líp</li>
+                <li>Čtení sci-fi, fantasy či válečné literatury</li>
+            </ul>
+            <h2 class="text-3xl font-bold mt-10">Kontakt</h2>
+            <p>Email: boriskrchnak085@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="mt-20 mx-10 mb-10">
+        <hr class="opacity-40 border-black dark:border-white">
+        <p class="text-center mt-4">Boris Krchňák</p>
+        <p class="text-center">
+            <a href="https://github.com/TheInterlol" class="hover:underline">Github</a> | 
+            <a href="https://www.linkedin.com/in/boris-krch%C5%88%C3%A1k-13782033b/" class="hover:underline">LinkedIn</a>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,93 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekt</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss"></style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        html { scrollbar-width: none; }
+        .slider_img { opacity: 0; }
+        .slider_img_active { opacity: 1; }
+    </style>
 </head>
 
-<body class="m-0 bg-black w-screen h-screen text-white font-sans">
+<body class="bg-white text-black font-sans overflow-x-hidden dark:bg-black dark:text-white transition-colors duration-300">
 
-    <div class="relative w-screen h-2.5 flex justify-end mr-[25px]"><img class="w-[75px] h-[75px]" src="slunce.png"
-            alt="slunce"></div>
-    <h1 class="mt-5 text-center text-5xl">Úvodní Stránka</h1>
-    <h4 class="mb-5 text-center text-2xl">Boris Krchňák</h4>
-
-    <div id="img_slider" class="relative w-screen h-[600px] overflow-hidden">
-        <img src="berk.jpg" alt="berk"
-            class="absolute top-0 left-0 w-full h-full opacity-100 transition-opacity duration-1000 ease-in-out object-cover slider_img_active">
-        <img src="pic.jpg" alt="pic"
-            class="absolute top-0 left-0 w-full h-full opacity-100 transition-opacity duration-1000 ease-in-out object-cover">
+    <!--Header-->
+    <div class="relative w-full z-50 flex justify-end p-4">
+        <img id="sun" class="w-8 h-8 cursor-pointer transition-transform hover:rotate-45" src="moon.png" alt="přepínač">
     </div>
 
-    <!--Pár slov před zobrazením stránek-->
-    <div class="mt-30">
-        <p class="text-center text-5xl">Vítejte na mém webu</p>
-        <p class="text-center text-2xl"> Jsem student na VŠB-TUO a toto je můj projekt do předmětu ZIT :).</p>
-    </div>
+    <h1 class="text-center text-5xl mt-5">Úvodní Stránka</h1>
+    <h4 class="text-center text-2xl mb-10">Boris Krchňák</h4>
 
-    <!--Něco málo o mě + proklik button na o mě stránku-->
-    <div class="mt-20 ml-50 flex justify-between items-center">
-        <p class="text-2xl">Něco málo o mě:</p>
-        <ul class="ml-15 list-disc">
-            <li>
-                <p>Je mi 19 let</p>
-            </li>
-            <li>
-                <p>Narodil jsem se v Nemocnici na fifejdách, ale celý život žiju v Porubě.</p>
-            </li>
-            <li>
-                <p>Vystudoval jsem střední školu s IT</p>
-            </li>
-            <li>
-                <p>Mám mnoho koníčku ale 100% her je můj nejoblíbenější</p>
-            </li>
-            <li>
-                <p>A více zjistíte zde -></p>
-            </li>
-        </ul>
-        <button id="osobni_profilBtn" class="relative bg-white shadow-lg shadow-white w-75 h-75 mr-50 rounded-lg overflow-hidden">
-            <img src="berk.jpg" class="absolute inset-0 rounded-lg blur-sm object-cover" alt="berk">
-            <p class="text-2xl relative w-full h-full flex items-center justify-center to-black">Osobní profil</p>
+    <!--Slider-->
+    <div class="relative w-full h-[300px] sm:h-[450px] md:h-[550px] overflow-hidden shadow-2xl group">
+        
+        <img src="berk.jpg" alt="Slide 1" class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+        <img src="pic.jpg" alt="Slide 2" class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+        <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
         </button>
-    </div>
 
-    <!--Projekty-->
-    <div class="mt-20 ml-50 flex justify-between items-center">
-        <p class="text-2xl">Projekty na kterých jsem pracoval:</p>
-        <ul class="ml-15 list-disc">
-            <li>
-                <p>Tetris - Projekt do UPR v 1. Semestru</p>
-            </li>
-            <li>
-                <p>Tic-Tac-Toe - Vlastní projekt během střední školy</p>
-            </li>
-            <li>
-                <p>Webovky čistě pro sebe</p>
-            </li>
-            <li>
-                <p>Detaily zjistíte zde -></p>
-            </li>
-        </ul>
-        <button id="projektyBtn" class="relative bg-white shadow-lg shadow-white w-75 h-75 mr-50 rounded-lg overflow-hidden">
-            <img src="berk.jpg" class="absolute inset-0 rounded-lg blur-sm object-cover" alt="berk">
-            <p class="text-2xl relative w-full h-full flex items-center justify-center to-black">Projekty</p>
+        <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
         </button>
+        
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+             </div>
+    </div>
+    <!--Úvodní text-->
+    <div class="text-center mt-16 px-4">
+        <p class="text-4xl font-semibold">Vítejte na mém webu</p>
+        <p class="text-2xl mt-2 text-gray-600 dark:text-gray-300">Jsem student na VŠB-TUO a toto je můj projekt do předmětu ZIT :)</p>
     </div>
 
-    <div class="mt-50 m-20">
-        <hr>
-        <p class="text-center">Boris Krchňák</p>
-        <p class="text-center"><a href="https://github.com/TheInterlol">Github</a> | <a
-                href="https://www.linkedin.com/in/boris-krch%C5%88%C3%A1k-13782033b/">LinkedIn</a></p>
-        <p class="text-center">COPYRIGHT 2025</p>
+    <div class="max-w-5xl mx-auto mt-20 px-6 flex flex-col md:flex-row items-start md:items-center gap-10">
+        <div class="flex-1">
+            <p class="text-2xl mb-4 font-bold border-b-2 border-gray-200 dark:border-gray-700 pb-2 inline-block">Něco málo o mně:</p>
+            <ul class="list-disc ml-6 space-y-2 text-lg">
+                <li>Je mi 19 let</li>
+                <li>Narodil jsem se v nemocnici na Fifejdách, žiju v Porubě.</li>
+                <li>Vystudoval jsem střední školu s IT zaměřením.</li>
+                <li>Mám mnoho koníčků, ale hry jsou TOP.</li>
+                <li>A více zjistíte zde →</li>
+            </ul>
+        </div>
+        <a href="osobni_profil.html" class="flex-1 w-full md:w-auto">
+            <button id="osobni_profilBtn" class="relative bg-white dark:bg-zinc-800 shadow-xl w-full md:w-[450px] h-[250px] rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                <img src="profil.png" class="absolute inset-0 w-full h-full object-cover blur-sm hover:blur-none transition-all duration-500 opacity-80" alt="berk">
+                <p class="relative text-white text-2xl font-bold drop-shadow-md w-full h-full flex items-center justify-center z-10">Osobní profil</p>
+            </button>
+        </a>
     </div>
 
+    <div class="max-w-5xl mx-auto mt-20 px-6 flex flex-col md:flex-row items-start md:items-center gap-10">
+        <div class="flex-1">
+            <p class="text-2xl mb-4 font-bold border-b-2 border-gray-200 dark:border-gray-700 pb-2 inline-block">Projekty na kterých jsem pracoval:</p>
+            <ul class="list-disc ml-6 space-y-2 text-lg">
+                <li>Tetris – projekt do UPR (1. semestr)</li>
+                <li>Tic-Tac-Toe – vlastní projekt</li>
+                <li>Webovky – osobní projekty</li>
+                <li>Detaily zde →</li>
+            </ul>
+        </div>
+        <a href="projekty.html" class="flex-1 w-full md:w-auto">
+            <button id="projektyBtn" class="relative bg-white dark:bg-zinc-800 shadow-xl w-full md:w-[450px] h-[250px] rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                <img src="carbon.png" class="absolute inset-0 w-full h-full object-cover blur-sm hover:blur-none transition-all duration-500 opacity-80" alt="berk">
+                <p class="relative text-white text-2xl font-bold drop-shadow-md w-full h-full flex items-center justify-center z-10">Projekty</p>
+            </button>
+        </a>
+    </div>
 
+    <div class="mt-20 mx-10 mb-10">
+        <hr class="opacity-40 border-black dark:border-white">
+        <p class="text-center mt-4 text-sm opacity-70">© 2025 Boris Krchňák</p>
+        <p class="text-center mt-2">
+            <a href="https://github.com/TheInterlol" class="hover:underline hover:text-blue-500">GitHub</a> |
+            <a href="https://www.linkedin.com/in/boris-krch%C5%88%C3%A1k-13782033b/" class="hover:underline hover:text-blue-500">LinkedIn</a>
+        </p>
+    </div>
+    
     <script src="script.js"></script>
 </body>
-
 </html>

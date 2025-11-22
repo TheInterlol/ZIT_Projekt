@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        html { scrollbar-width: none; }
+    </style>
+</head>
+
+<body class="bg-white text-black font-sans dark:bg-black dark:text-white transition-colors duration-300">
+
+<!--Header-->
+    <a href="hlavni_stranka.html" class="absolute top-4 left-4 z-[60] opacity-80 hover:opacity-100 transition">
+        <img id="home-icon" src="home_dark.png" alt="Zpět" class="w-8 h-8"> 
+    </a>
+
+    <div class="relative w-full z-50 flex justify-end p-4">
+        <img id="sun" class="w-8 h-8 cursor-pointer transition-transform hover:rotate-45" src="moon.png" alt="přepínač">
+    </div>
+
+    <h1 class="text-center text-5xl mt-5">Moje Projekty</h1>
+    <p class="text-center text-xl mb-10 text-gray-600 dark:text-gray-400">Výběr projektů, na kterých jsem pracoval</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 max-w-6xl mx-auto px-6 pb-20">
+        <a href="https://github.com/TheInterlol/Tetris_Projekt" target="_blank">
+        <div class="bg-white dark:bg-zinc-800 text-black dark:text-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <img src="background.jpg" class="h-48 w-full object-cover" alt="Tetris">
+            <div class="p-5">
+                <h2 class="text-2xl font-bold">Tetris</h2>
+                <p class="mt-2 text-gray-600 dark:text-gray-300">Projekt do UPR v 1. semestru.</p>
+            </div>
+        </div></a>
+<a href="https://github.com/TheInterlol/Tic-Tac-Toe" target="_blank">
+        <div class="bg-white dark:bg-zinc-800 text-black dark:text-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <img src="tic-tac-toe.png" class="h-48 w-full object-cover" alt="Tic-Tac-Toe">
+            <div class="p-5">
+                <h2 class="text-2xl font-bold">Tic-Tac-Toe</h2>
+                <p class="mt-2 text-gray-600 dark:text-gray-300">Vlastní projekt. AI, PvP, PvC.</p>
+            </div>
+        </div>
+        </a>
+
+        <a href="https://github.com/TheInterlol/ZIT_Projekt" target="_blank">
+        <div class="bg-white dark:bg-zinc-800 text-black dark:text-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <img src="berk.jpg" class="h-48 w-full object-cover" alt="Webovky">
+            <div class="p-5">
+                <h2 class="text-2xl font-bold">Webovky</h2>
+                <p class="mt-2 text-gray-600 dark:text-gray-300">Tvorba webů pro sebe i školu.</p>
+            </div>
+        </div></a>
+
+    </div>
+
+    <div class="mx-10 mb-10">
+        <hr class="opacity-40 border-black dark:border-white">
+        <p class="text-center mt-4">Boris Krchňák</p>
+        <p class="text-center">
+            <a href="https://github.com/TheInterlol" class="hover:underline hover:text-blue-500">Github</a> | 
+            <a href="https://www.linkedin.com/in/boris-krch%C5%88%C3%A1k-13782033b/" class="hover:underline hover:text-blue-500">LinkedIn</a>
+        </p>
+        <p class="text-center text-sm opacity-60 mt-2">COPYRIGHT 2025</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
