@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekt</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script>
         tailwind.config = {
             darkMode: 'class',
         }
     </script>
-
     <style>
-        ::-webkit-scrollbar { display: none; }
-        html { scrollbar-width: none; }
-        .slider_img { opacity: 0; }
-        .slider_img_active { opacity: 1; }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+            border-radius: 9999px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 9999px;
+            border: 2px solid #f3f4f6;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+
+        /* --- DARK MODE --- */
+        html.dark ::-webkit-scrollbar-track {
+            background: #404040;
+        }
+
+        html.dark ::-webkit-scrollbar-thumb {
+            background: #737373;
+            border-color: #404040;
+        }
     </style>
 </head>
 
-<body class="bg-white text-black font-sans overflow-x-hidden dark:bg-black dark:text-white transition-colors duration-300">
+<body
+    class="bg-white text-black font-sans overflow-x-hidden dark:bg-black dark:text-white transition-colors duration-300">
 
     <!--Header-->
     <div class="relative w-full z-50 flex justify-end p-4">
-        <img id="sun" class="w-8 h-8 cursor-pointer transition-transform hover:rotate-45" src="moon.png" alt="přepínač">
+        <img id="sun" class="w-8 h-8 cursor-pointer transition-transform hover:rotate-45" src="imgs/moon.png"
+            alt="přepínač">
     </div>
 
     <h1 class="text-center text-5xl mt-5">Úvodní Stránka</h1>
@@ -32,33 +57,50 @@
 
     <!--Slider-->
     <div class="relative w-full h-[300px] sm:h-[450px] md:h-[550px] overflow-hidden shadow-2xl group">
-        
-        <img src="berk.jpg" alt="Slide 1" class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
-        <img src="pic.jpg" alt="Slide 2" class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
-        <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+
+        <img src="imgs/default-pozadi.png" alt="Slide 1"
+            class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+        <img src="imgs/pic.jpg" alt="Slide 2"
+            class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+        <img src="imgs/pozadi1.png" alt="Slide 3"
+            class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+        <img src="imgs/pozadi2.png" alt="Slide 4"
+            class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+        <img src="imgs/pozadi3.png" alt="Slide 5"
+            class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+        <img src="imgs/pozadi4.jpg" alt="Slide 6"
+            class="slider-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+
+        <button id="prevBtn"
+            class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
         </button>
 
-        <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+        <button id="nextBtn"
+            class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
         </button>
-        
+
         <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-             </div>
+        </div>
     </div>
     <!--Úvodní text-->
     <div class="text-center mt-16 px-4">
         <p class="text-4xl font-semibold">Vítejte na mém webu</p>
-        <p class="text-2xl mt-2 text-gray-600 dark:text-gray-300">Jsem student na VŠB-TUO a toto je můj projekt do předmětu ZIT :)</p>
+        <p class="text-2xl mt-2 text-gray-600 dark:text-gray-300">Jsem student na VŠB-TUO a toto je můj projekt do
+            předmětu ZIT :)</p>
     </div>
 
     <div class="max-w-5xl mx-auto mt-20 px-6 flex flex-col md:flex-row items-start md:items-center gap-10">
         <div class="flex-1">
-            <p class="text-2xl mb-4 font-bold border-b-2 border-gray-200 dark:border-gray-700 pb-2 inline-block">Něco málo o mně:</p>
+            <p class="text-2xl mb-4 font-bold border-b-2 border-gray-200 dark:border-gray-700 pb-2 inline-block">Něco
+                málo o mně:</p>
             <ul class="list-disc ml-6 space-y-2 text-lg">
                 <li>Je mi 19 let</li>
                 <li>Narodil jsem se v nemocnici na Fifejdách, žiju v Porubě.</li>
@@ -68,16 +110,22 @@
             </ul>
         </div>
         <a href="osobni_profil.html" class="flex-1 w-full md:w-auto">
-            <button id="osobni_profilBtn" class="relative bg-white dark:bg-zinc-800 shadow-xl w-full md:w-[450px] h-[250px] rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-                <img src="profil.png" class="absolute inset-0 w-full h-full object-cover blur-sm hover:blur-none transition-all duration-500 opacity-80" alt="berk">
-                <p class="relative text-white text-2xl font-bold drop-shadow-md w-full h-full flex items-center justify-center z-10">Osobní profil</p>
-            </button>
+            <div id="osobni_profilBtn"
+                class="relative bg-white dark:bg-zinc-800 shadow-xl w-full md:w-[450px] h-[250px] rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                <img src="imgs/profil.png" loading="lazy"
+                    class="absolute inset-0 w-full h-full object-cover blur-sm hover:blur-none transition-all duration-500 opacity-80"
+                    alt="berk">
+                <p
+                    class="relative text-white text-2xl font-bold drop-shadow-md w-full h-full flex items-center justify-center z-10">
+                    Osobní profil</p>
+            </div>
         </a>
     </div>
 
     <div class="max-w-5xl mx-auto mt-20 px-6 flex flex-col md:flex-row items-start md:items-center gap-10">
         <div class="flex-1">
-            <p class="text-2xl mb-4 font-bold border-b-2 border-gray-200 dark:border-gray-700 pb-2 inline-block">Projekty na kterých jsem pracoval:</p>
+            <p class="text-2xl mb-4 font-bold border-b-2 border-gray-200 dark:border-gray-700 pb-2 inline-block">
+                Projekty na kterých jsem pracoval:</p>
             <ul class="list-disc ml-6 space-y-2 text-lg">
                 <li>Tetris – projekt do UPR (1. semestr)</li>
                 <li>Tic-Tac-Toe – vlastní projekt</li>
@@ -86,10 +134,15 @@
             </ul>
         </div>
         <a href="projekty.html" class="flex-1 w-full md:w-auto">
-            <button id="projektyBtn" class="relative bg-white dark:bg-zinc-800 shadow-xl w-full md:w-[450px] h-[250px] rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-                <img src="carbon.png" class="absolute inset-0 w-full h-full object-cover blur-sm hover:blur-none transition-all duration-500 opacity-80" alt="berk">
-                <p class="relative text-white text-2xl font-bold drop-shadow-md w-full h-full flex items-center justify-center z-10">Projekty</p>
-            </button>
+            <div id="projektyBtn"
+                class="relative bg-white dark:bg-zinc-800 shadow-xl w-full md:w-[450px] h-[250px] rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                <img src="imgs/carbon.png" loading="lazy"
+                    class="absolute inset-0 w-full h-full object-cover blur-sm hover:blur-none transition-all duration-500 opacity-80"
+                    alt="berk">
+                <p
+                    class="relative text-white text-2xl font-bold drop-shadow-md w-full h-full flex items-center justify-center z-10">
+                    Projekty</p>
+            </div>
         </a>
     </div>
 
@@ -98,10 +151,11 @@
         <p class="text-center mt-4 text-sm opacity-70">© 2025 Boris Krchňák</p>
         <p class="text-center mt-2">
             <a href="https://github.com/TheInterlol" class="hover:underline hover:text-blue-500">GitHub</a> |
-            <a href="https://www.linkedin.com/in/boris-krch%C5%88%C3%A1k-13782033b/" class="hover:underline hover:text-blue-500">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/boris-krch%C5%88%C3%A1k-13782033b/"
+                class="hover:underline hover:text-blue-500">LinkedIn</a>
         </p>
     </div>
-    
     <script src="script.js"></script>
 </body>
+
 </html>
